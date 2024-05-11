@@ -1,13 +1,11 @@
 function getValue(){
-    //var data=document.getElementById("date").value;
 var currentDate=new Date();
 var eidDate= new Date("16 june 2024");
 var diff=(eidDate -currentDate)/1000;
 
-// var months=Math.floor((diff/3600) % 24);
-var months=Math.floor((diff/3600/24)%12);
+var months = Math.floor(diff / (3600 * 24 * 30));
 var Rdays=Math.floor(diff/3600/24);
-var days=Math.floor((diff/3600/24)-30);
+var days = Math.floor(Rdays - months * 30);
 var hours=Math.floor((diff/3600) % 24);
 var minuts=Math.floor((diff/60)%60);
 var seconds=Math.floor(diff%60);
